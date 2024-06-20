@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transcrição de Áudio</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;500;600;700;800;900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+  --dark:#000;
+  --dark1: #28272c;
+  --dark2: #505050;
+  --light: #fff;
+  --light1: #ddd;
+  --light2: #dcdcdc;
+  --colorPrincipal:#4F2CD2;  /* #0c0b20 */
+  --corButton-1: #2C7BBF; /*#007bff;*/
+  --corButton-2: #29A678 ;/*#28a745;*/
+  --corButton-3: #F2D541; /*#ffc107;*/
+  /* FONTS */
+  --font-Raleway: "Raleway", sans-serif;
+  --font-Roboto: "Roboto", sans-serif;;
+} /* Estilos CSS para a página */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.block {
+  width: calc(33.33% - 20px);
+  position: relative;
+  background-color: var(--light2);
+  padding: 20px;
+  padding-bottom: 4rem;
+  border: 1px solid var(--light1);
+  box-sizing: border-box;
+  text-align: center;
+  min-height: 400px;
+  overflow: hidden;
+}
+  
+body {
+  font-family: var(--font-Raleway);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.item{
+    position: relative;
+    margin: 5px;
+}
+/* .item::before{
+    content: '';
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px 15px;
+    background-image: url(https://icon-icons.com/icons2/522/PNG/512/success_icon-icons.com_52365.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+} */
+.item::before{
+    content: '|'; /*\f04b Play */
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size:1.2rem;
+    font-weight: 800;
+    color: var(--colorPrincipal);
+    margin-right:10px;
+}
+ul{
+  margin: 1rem;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items:baseline;
+  gap: 0.4rem;
+  list-style: none;
+}
+strong{
+  color: var(--colorPrincipal);
+   font-size: 1.2rem; 
+}
+h1, h2, h3, p{
+  margin: 0;
+  padding: 0;
+}
+article{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.text-article{
+  width: 90%;
+  margin: auto;
+
+}
+ .titulo {
+    /* color: var(--dark1); */
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 3rem auto 0.5rem;
+}
+.text-article h3 {
+    color: var(--dark1);
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: left;
+    white-space:unset;
+    margin: 0  0 0.4rem 1rem ;
+}
+.text-article p {
+    color: var(--dark2);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: left;
+    white-space:unset;
+    margin-left: 1rem;
+}
+.text-article a {
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%,0); 
+  color: var(--colorPrincipal);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.text-article a:hover{
+  text-decoration: underline;
+}
+header {
+  width: 100%;
+  top: 0;
+  background-color: var(--colorPrincipal);
+  color: #fff;
+  padding: 0;
+  /* display: flex; */
+  background-image: linear-gradient(86deg, #2977F3, #4F2CD2);
+  justify-content: space-between; /* Alinha os elementos à esquerda e à direita */
+  align-items: center; /*Alinha os elementos verticalmente;*/
+  box-shadow: 1 1px 2px rgb(0, 0, 0, 0.2);
+}
+
+.right-align {
+  height: 100%;
+  width: 100%;
+  background-color: #2C7BBF;
+  padding:0 2rem ;
+}
+
+main {
+    /* background: #ececec; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* position: absolute; */
+    /* overflow: hidden; */
+}
+
+.assinar {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Estilos de contraste */
+.high-contrast {
+  background-color: var(--dark);
+  color: #fff;
+}
+
+.black-and-white {
+  background-color: var(--light);
+  color: #000;
+}
+
+.blue-contrast {
+  background-color: var(--corButton-1);
+  color: #fff;
+}
+
+.green-contrast {
+  background-color: var(--corButton-2);
+  color: #fff;
+}
+
+.yellow-contrast {
+  background-color: var(--corButton-3);
+  color: #000;
+}
+
+/* Estilos para alinhar a navegação à direita */
+.conteiner-top{
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.ButtonCor{
+  /* margin: auto; */
+  padding-right: 4rem;
+  margin-left: auto; /*Empurra a navegação para a direita */
+    /* position: absolute;
+    top: 30px;
+    right: 50%;
+    transform: translate(50%, 0); */
+}
+.bt-cor{
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size:12px;
+  opacity: 0.8;
+  font-weight: 600;
+  font-family: var(--font-Poppins);
+  font-style: normal;
+}
+.bt-cor:hover{
+opacity: 1;
+}
+.amarelo{
+  background-color: var(--corButton-3);
+}
+.verde{
+  background-color: var(--corButton-2);
+}
+.azul{
+  background-color: var(--corButton-1);
+
+}
+.contraste{
+  background-color: var(--dark);
+  color: var(--light);
+}
+.normal{
+  background-color: var(--light);
+  color: var(--dark);
+  /* border-color: var(--dark); */
+}
+.nome{
+  padding: 1rem 3rem ;
+}
+footer {
+  background: var(--dark1); 
+  /* #2d0ba7 */
+  color: #fff;
+  margin-top: 2rem;
+  padding: 2rem;
+  bottom: 0;
+  width: 100%;
+}
+.bt-vision{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  margin: 0.5rem auto 2rem;
+  border: none;
+  border-radius: 4px;
+  height: 35px;
+  padding:5px 10px;
+  background-image: linear-gradient(86deg, #2977F3, #4F2CD2);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 14px;
+  }
+  .conteiner{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.area { 
+  z-index: 1;
+  width: 20rem;
+  height: 20rem;
+  padding: 2rem;
+  border-radius: 24px;
+  border: 4px solid var(--light2);
+  position: relative;
+   background-color: var(--light); 
+  /* box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+  margin: 3rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+.mensagem{
+  /* margin-left: 4rem; */
+  /* width: 60%; */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  gap: 1rem;
+}
+
+.mensagem > h2 {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--dark1);
+  margin: 0 auto;
+  text-align: center;
+
+}
+.mensagem > img {
+  width: 12rem;
+  margin: auto;
+}
+.div-bt{
+  z-index: 99;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 50px;
+  width: 180px; */
+  padding: 0.8rem 1.4rem;
+  border-radius: 40rem;
+  background-color: var(--corButton-1);
+}
+.bt-enviar {
+  background: transparent;
+  font-size: 1.4rem;
+  font-weight: 600;
+  /* letter-spacing: 0.1rem; */
+  /* float: right; */
+  border: none;
+  color: #fff;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Regra 2: Não altere a semântica de elementos nativos do HTML -->
+    <h1 class="nome">Audio virando Texto</h1>
+</header>
+<div class="conteiner-top">
+    <div class="ButtonCor" id="contrastOptions">
+    <button class="bt-cor normal" id="blackAndWhite">Preto e Branco</button>
+    <button class="bt-cor contraste" id="highContrast">Alto Contraste</button>
+    <button class="bt-cor azul" id="blueContrast">Azul</button>
+    <button class="bt-cor verde" id="greenContrast">Verde</button>
+    <button class="bt-cor amarelo" id="yellowContrast">Amarelo</button>
+    </div>
+</div>
+ 
+  <main>
+    <h2 class="titulo">Importancia da transcrição de áudio para texto</h2>
+ 
+    <div class="container">
+      <div class="block">
+        <button class="bt-vision" onclick="toggleVisibility('section1')">Mostrar - Ocultar</button>
+        <div id="section1" class="hidden">
+          <article>
+            <div class="text-article">
+              <h3>Transcrição de áudio na Acessibilidade</h3>
+              <p>A audiodescrição é um recurso de acessibilidade 
+                 que permite que as pessoas com deficiência visual 
+                 possam assistir e entender melhor filmes, peças 
+                 de teatro, programas de TV, exposições, mostras,
+                 musicais, óperas e outros, ouvindo o que pode ser visto.</p>
+              <a href="https://www.ce.ufpb.br/nedesp/contents/noticias/audiodescricao-recurso-de-acessibilidade-de-inclusao-cultural#:~:text=A%20audiodescri%C3%A7%C3%A3o%20%C3%A9%20um%20recurso,o%20que%20pode%20ser%20visto.">Leia mais</a>
+            </div>
+          </article>
+        </div>
+      </div>
+     
+      <div class="block">
+        <button  class="bt-vision"  onclick="toggleVisibility('section2')">Mostrar - Ocultar</button>
+        <div id="section2" class="hidden">
+          <article>
+            <div class="text-article">
+            <h3>Benefícios da Transcrição em áudio</h3>
+            <p>A transcrição de áudio e vídeo é fundamental para 
+               melhorar a experiência do usuário ao consumir 
+               conteúdos na internet. Nesse sentido, em muitos momentos 
+               as pessoas desejam ter as informações de um produto 
+               audiovisual por escrito, seja de um vídeo assistido 
+               online ou até de um podcast.</p>
+            <a href="https://nexustraducoes.com/transcricao-de-audio-e-video-entenda-importancia-servico/">Leia mais</a>
+            </div>
+          </article>
+        </div>  
+      </div>
+ 
+      <div class="block">
+        <button  class="bt-vision"  onclick="toggleVisibility('section3')">Mostrar - Ocultar</button>
+        <div id="section3" class="hidden">
+          <article>
+            <div class="text-article">
+            <h3>3 Plataformas de Transcrição que utilizam IA</h3>
+            <ul>
+              <li class="item"><strong>Ytscribe.com</strong></li>
+              <li class="item"><strong>Transkriptor</strong></li>
+              <li class="item"><strong>Summarize.tech</strong></li>
+            </ul>
+      
+            <a href="https://herospark.com/blog/ia-para-transcrever-video/">Leia mais</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteiner">
+      <div class="area">
+        <div class="box-mensagem">
+          <div class="mensagem">
+            <img src="https://cdn-icons-png.flaticon.com/512/4698/4698574.png" alt="Imagem de um Vetor com microfone e pepel escrito">
+            <!-- https://cdn-icons-png.flaticon.com/512/4698/4698574.png -->
+            <h2>Descubra o que eles estão falando!</h2>
+          </div>
+        </div>
+       
+          <div class="div-bt" >
+            <button class="bt-enviar" id="startButton">Começar</button>
+            <div id="transcription"></div>
+          </div>
+      </div>
+    </div>
+      </main>
+    
+
+ 
+  <footer>
+    <p>© 2024 - Transcrição de Áudio. Desenvolvido por Nicoly Mendes</p>
+  </footer>
+ 
+  <script>
+    const blackAndWhiteBtn = document.getElementById('blackAndWhite');
+    const highContrastBtn = document.getElementById('highContrast');
+    const blueContrastBtn = document.getElementById('blueContrast');
+    const greenContrastBtn = document.getElementById('greenContrast');
+    const yellowContrastBtn = document.getElementById('yellowContrast');
+ 
+    blackAndWhiteBtn.addEventListener('click', function() {
+      document.body.classList.remove('high-contrast', 'blue-contrast', 'green-contrast', 'yellow-contrast');
+      document.body.classList.add('black-and-white');
+    });
+ 
+    highContrastBtn.addEventListener('click', function() {
+      document.body.classList.remove('black-and-white', 'blue-contrast', 'green-contrast', 'yellow-contrast');
+      document.body.classList.add('high-contrast');
+    });
+ 
+    blueContrastBtn.addEventListener('click', function() {
+      document.body.classList.remove('high-contrast', 'black-and-white', 'green-contrast', 'yellow-contrast');
+      document.body.classList.add('blue-contrast');
+    });
+ 
+    greenContrastBtn.addEventListener('click', function() {
+      document.body.classList.remove('high-contrast', 'black-and-white', 'blue-contrast', 'yellow-contrast');
+      document.body.classList.add('green-contrast');
+    });
+ 
+    yellowContrastBtn.addEventListener('click', function() {
+      document.body.classList.remove('high-contrast', 'black-and-white', 'blue-contrast', 'green-contrast');
+      document.body.classList.add('yellow-contrast');
+    });
+    // Obtém referências para os elementos HTML relevantes
+    const transcription = document.getElementById('transcription');
+    const startButton = document.getElementById('startButton');
+ 
+    // Variáveis para controle do reconhecimento de fala
+    let recognizing = false; // Indica se o reconhecimento está ocorrendo
+    let finalTranscript = ''; // Armazena o texto final reconhecido
+ 
+    // Verifica se o navegador suporta a API de Reconhecimento de Fala
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+ 
+    // Verifica se a API de Reconhecimento de Fala é suportada
+    if (window.SpeechRecognition) {
+      // Cria uma instância do reconhecimento de fala
+      var recognition = new SpeechRecognition();
+      // Configurações do reconhecimento de fala
+      recognition.continuous = true; // Reconhecimento contínuo
+      recognition.interimResults = true; // Resultados intermediários
+      recognition.lang = 'pt-BR'; // Define o idioma como Português- Brasil
+ 
+      // Evento acionado quando o reconhecimento de fala inicia
+      recognition.onstart = function() {
+        recognizing = true; // Define que o reconhecimento está ocorrendo
+        startButton.textContent = 'Parar Transcrição'; // Atualiza o texto do botão
+      };
+ 
+      // Evento acionado em caso de erro durante o reconhecimento
+      recognition.onerror = function(event) {
+        console.log('Erro de reconhecimento: ' + event.error); // Registra o erro no console
+      };
+ 
+      // Evento acionado quando o reconhecimento de fala termina
+      recognition.onend = function() {
+        recognizing = false; // Define que o reconhecimento não está mais ocorrendo
+        startButton.textContent = 'Transcrevendo...'; // Atualiza o texto do botão
+      };
+ 
+      // Evento acionado quando resultados de reconhecimento de fala estão disponíveis
+      recognition.onresult = function(event) {  
+        let interimTranscript = ''; // Variável para transcrição intermediária
+        // Itera sobre os resultados do reconhecimento
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+         if (event.results[i].isFinal) {
+           // Se a transcrição for final, adiciona ao texto final
+            finalTranscript += event.results[i][0].transcript;
+          } else {
+           // Caso contrário, é uma transcrição intermediária
+           interimTranscript += event.results[i][0].transcript;
+          }
+        }
+       // Exibe o texto reconhecido ao usuário
+        transcription.textContent = finalTranscript + interimTranscript;
+      };
+ 
+     // Adiciona evento de clique ao botão de início/parada da transcrição
+     startButton.addEventListener('click', function() {
+       if (recognizing) {
+         recognition.stop(); // Para o reconhecimento se já estiver ocorrendo
+         return;
+       }
+       // Se não estiver ocorrendo, limpa o texto e inicia o reconhecimento
+       finalTranscript = '';
+        transcription.textContent = '';
+        recognition.start();
+      }, false);
+ 
+    } else {
+      // Se a API não é suportada, esconde o botão e exibe uma mensagem
+      startButton.style.visibility = 'hidden';
+      transcription.textContent = 'Seu navegador não suporta a API de reconhecimento de fala.';
+    }
+    function toggleVisibility(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section.style.display === 'none' || section.style.display === '') {
+      section.style.display = 'block';
+    } else {
+      section.style.display = 'none';
+    }
+  }
+  </script>
+ 
+</body>
+</html>
+ 
